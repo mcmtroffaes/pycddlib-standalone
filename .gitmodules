@@ -1,0 +1,6 @@
+[submodule "pycddlib"]
+	path = pycddlib
+	url = https://github.com/mcmtroffaes/pycddlib.git
+[submodule "cddlib"]
+	path = cddlib
+	url = https://github.com/cddlib/cddlib.git
