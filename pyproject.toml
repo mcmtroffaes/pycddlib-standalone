@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel", "cython"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycddlib-standalone"  # as it would appear on PyPI
+version = "3.0.0a0"
+requires-python = ">= 3.8"
+authors = [
+  {name = "Matthias C. M. Troffaes", email = "matthias.troffaes@gmail.com"},
+]
+description = "Standalone version of pycddlib"
+readme = "README.rst"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: GNU General Public License (GPL)",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Programming Language :: C",
+  "Programming Language :: Cython",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+packages= []
+
+# [[tool.setuptools.ext-modules]] defined in setup.py for now

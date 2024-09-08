@@ -1,4 +1,7 @@
 """Setup script for pycddlib-standalone."""
+
+from setuptools import setup
+from setuptools.extension import Extension
 import sys
 
 # pycddlib is a Python wrapper for Komei Fukuda's cddlib
@@ -18,64 +21,38 @@ import sys
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-classifiers = """\
-Development Status :: 4 - Beta
-License :: OSI Approved :: GNU General Public License (GPL)
-Intended Audience :: Science/Research
-Topic :: Scientific/Engineering :: Mathematics
-Programming Language :: C
-Programming Language :: Cython
-Programming Language :: Python
-Programming Language :: Python :: 3
-Operating System :: OS Independent"""
-
-from setuptools import setup
-from setuptools.extension import Extension
-
-# get documentation from README.rst file
-doclines = open("README.rst").read().split("\n")
-
+name = "cdd"
+sources = [
+  "pycddlib/cdd.pyx",
+  "cddlib/lib-src/cddcore.c",
+  "cddlib/lib-src/cddio.c",
+  "cddlib/lib-src/cddlib.c",
+  "cddlib/lib-src/cddlp.c",
+  "cddlib/lib-src/cddmp.c",
+  "cddlib/lib-src/cddproj.c",
+  "cddlib/lib-src/setoper.c",
+]
+depends = [
+    "include/cddlib/cdd.h",
+    "include/cddlib/cddmp.h",
+    "include/cddlib/cddtypes.h",
+    "include/cddlib/setoper.h",
+    "include/cddlib/splitmix64.h",
+    "pycddlib/extern_cddlib.pxi",
+    "pycddlib/extern_mytype.pxi",
+    "pycddlib/extern_preamble.pxi",
+]
+undef_macros = ["GMPRATIONAL"]
+extra_compile_args = ["-Iinclude/", "-Iinclude/cddlib/"] + ["/std:c11"] if (sys.platform == 'win32') else []
 
 setup(
-    name="pycddlib",
-    version="3.0.0a0",
     ext_modules=[
         Extension(
-            name="cdd",
-            sources=[
-                "pycddlib/cdd.pyx",
-                "cddlib/lib-src/cddcore.c",
-                "cddlib/lib-src/cddio.c",
-                "cddlib/lib-src/cddlib.c",
-                "cddlib/lib-src/cddlp.c",
-                "cddlib/lib-src/cddmp.c",
-                "cddlib/lib-src/cddproj.c",
-                "cddlib/lib-src/setoper.c",
-            ],
-            depends=[
-                "include/cddlib/cdd.h",
-                "include/cddlib/cddmp.h",
-                "include/cddlib/cddtypes.h",
-                "include/cddlib/setoper.h",
-            ],
-            undef_macros=["GMPRATIONAL"],
-            extra_compile_args=["/std:c11"] if (sys.platform == 'win32') else [],
+            name=name,
+            sources=sources,
+            depends=depends,
+            undef_macros=undef_macros,
+            extra_compile_args=extra_compile_args,
         )
     ],
-    author="Matthias C. M. Troffaes",
-    author_email="matthias.troffaes@gmail.com",
-    license="GPL",
-    keywords="convex, polyhedron, linear programming, double description method",
-    platforms="any",
-    description=doclines[0],
-    long_description="\n".join(doclines[2:]),
-    long_description_content_type="text/x-rst",
-    url="http://pypi.python.org/pypi/pycddlib-standalone",
-    classifiers=classifiers.split("\n"),
-    setup_requires=[
-        # setuptools 18.0 properly handles Cython extensions.
-        "setuptools>=18.0",
-        "Cython>=3.0.0",
-    ],
-    python_requires=">=3.8",
 )
