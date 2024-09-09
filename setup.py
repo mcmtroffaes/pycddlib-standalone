@@ -23,27 +23,29 @@ import sys
 
 name = "cdd"
 sources = [
-  "pycddlib/cdd.pyx",
-  "cddlib/lib-src/cddcore.c",
-  "cddlib/lib-src/cddio.c",
-  "cddlib/lib-src/cddlib.c",
-  "cddlib/lib-src/cddlp.c",
-  "cddlib/lib-src/cddmp.c",
-  "cddlib/lib-src/cddproj.c",
-  "cddlib/lib-src/setoper.c",
+    "src/pycddlib/cdd.pyx",
+    "src/cddlib/lib-src/cddcore.c",
+    "src/cddlib/lib-src/cddio.c",
+    "src/cddlib/lib-src/cddlib.c",
+    "src/cddlib/lib-src/cddlp.c",
+    "src/cddlib/lib-src/cddmp.c",
+    "src/cddlib/lib-src/cddproj.c",
+    "src/cddlib/lib-src/setoper.c",
 ]
 depends = [
-    "include/cddlib/cdd.h",
-    "include/cddlib/cddmp.h",
-    "include/cddlib/cddtypes.h",
-    "include/cddlib/setoper.h",
-    "include/cddlib/splitmix64.h",
-    "pycddlib/extern_cddlib.pxi",
-    "pycddlib/extern_mytype.pxi",
-    "pycddlib/extern_preamble.pxi",
+    "src/include/cddlib/cdd.h",
+    "src/include/cddlib/cddmp.h",
+    "src/include/cddlib/cddtypes.h",
+    "src/include/cddlib/setoper.h",
+    "src/include/cddlib/splitmix64.h",
+    "src/pycddlib/extern_cddlib.pxi",
+    "src/pycddlib/extern_mytype.pxi",
+    "src/pycddlib/extern_preamble.pxi",
 ]
 undef_macros = ["GMPRATIONAL"]
-extra_compile_args = ["-Iinclude/", "-Iinclude/cddlib/"] + ["/std:c11"] if (sys.platform == 'win32') else []
+extra_compile_args = ["-Isrc/include/", "-Isrc/include/cddlib/"] + (
+    ["/std:c11"] if (sys.platform == "win32") else []
+)
 
 setup(
     ext_modules=[

@@ -10,7 +10,7 @@ authors = [
   {name = "Matthias C. M. Troffaes", email = "matthias.troffaes@gmail.com"},
 ]
 description = "Standalone version of pycddlib"
-readme = "README.rst"
+readme = "README.md"
 classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
@@ -22,8 +22,6 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
 ]
-
-[tool.setuptools]
-packages= []
+keywords = ["convex, polyhedron, linear programming, double description method"]
 
 # [[tool.setuptools.ext-modules]] defined in setup.py for now
