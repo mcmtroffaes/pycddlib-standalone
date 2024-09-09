@@ -5,9 +5,9 @@ cannot be installed, such as for instance Google Colab.
 
 Install from PyPI with::
 
-    pip install pycddlib-standalone
+    python -m pip install pycddlib-standalone
 
 Install from the source repository with::
 
-    ./configure.py
-    pip install .
+    python configure.py
+    python -m pip install .
