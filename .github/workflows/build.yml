@@ -51,7 +51,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install sdist
-      run: python -m pip install --pre --no-index --find-links=. pycddlib-standalone
+      run: python -m pip install --pre --find-links=. pycddlib-standalone
     - name: Run test suite
       run: |
         # TODO run the pycddlib test suite for the cdd module
