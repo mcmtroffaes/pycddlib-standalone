@@ -1,0 +1,4 @@
+include LICENSE.md
+exclude src/pycddlib/setup.py
+prune src/pycddlib/docs/
+prune src/pycddlib/test/
