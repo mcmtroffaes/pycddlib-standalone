@@ -58,7 +58,7 @@ jobs:
   release:
     if: github.repository == 'mcmtroffaes/pycddlib-standalone'
     runs-on: 'ubuntu-latest'
-    needs: [ build-sdist, test ]
+    needs: [ build-sdist, build-test ]
     steps:
     - name: Download sdist
       uses: actions/download-artifact@v4
