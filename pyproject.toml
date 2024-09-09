@@ -29,6 +29,6 @@ Homepage = "https://github.com/mcmtroffaes/pycddlib-standalone"
 Documentation = "https://pycddlib.readthedocs.io/"
 Repository = "https://github.com/mcmtroffaes/pycddlib-standalone.git"
 Issues = "https://github.com/mcmtroffaes/pycddlib-standalone/issues"
-Changelog = "https://github.com/mcmtroffaes/pycddlib-standalone/blob/main/CHANGELOG.md"
+Changelog = "https://github.com/mcmtroffaes/pycddlib-standalone/blob/develop/CHANGELOG.md"
 
 # [[tool.setuptools.ext-modules]] defined in setup.py for now
