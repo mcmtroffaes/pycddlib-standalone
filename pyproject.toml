@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pycddlib-standalone"
-version = "3.0.0a2"
+version = "3.0.0a3"
 requires-python = ">= 3.8"
 authors = [
   {name = "Matthias C. M. Troffaes", email = "matthias.troffaes@gmail.com"},
@@ -30,5 +30,12 @@ Documentation = "https://pycddlib.readthedocs.io/"
 Repository = "https://github.com/mcmtroffaes/pycddlib-standalone.git"
 Issues = "https://github.com/mcmtroffaes/pycddlib-standalone/issues"
 Changelog = "https://github.com/mcmtroffaes/pycddlib-standalone/blob/develop/CHANGELOG.md"
+
+[tool.setuptools]
+packages = ["cdd"]
+package-dir = {"" = "src/pycddlib/src"}
+
+[tool.setuptools.package-data]
+cdd = ["py.typed"]
 
 # [[tool.setuptools.ext-modules]] defined in setup.py for now

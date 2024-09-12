@@ -21,9 +21,9 @@ import sys
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-name = "cdd"
+name = "cdd.__init__"
 sources = [
-    "src/pycddlib/cdd.pyx",
+    "src/pycddlib/cython/_cdd.pyx",
     "src/cddlib/lib-src/cddcore.c",
     "src/cddlib/lib-src/cddio.c",
     "src/cddlib/lib-src/cddlib.c",
@@ -38,11 +38,14 @@ depends = [
     "src/include/cddlib/cddtypes.h",
     "src/include/cddlib/setoper.h",
     "src/include/cddlib/splitmix64.h",
-    "src/pycddlib/extern_cddlib.pxi",
-    "src/pycddlib/extern_mytype.pxi",
-    "src/pycddlib/extern_preamble.pxi",
+    "src/pycddlib/cython/all.pxi",
+    "src/pycddlib/cython/cdd.pxi",
+    "src/pycddlib/cython/mytype.pxi",
+    "src/pycddlib/cython/pycddlib.pxi",
+    "src/pycddlib/cython/pyenums.pxi",
+    "src/pycddlib/cython/setoper.pxi",
 ]
-undef_macros = ["GMPRATIONAL"]
+# #include "cdd.h" & #include "cddlib/cdd.h" both needed to compile
 extra_compile_args = ["-Isrc/include/", "-Isrc/include/cddlib/"] + (
     ["/std:c11"] if (sys.platform == "win32") else []
 )
@@ -50,11 +53,10 @@ extra_compile_args = ["-Isrc/include/", "-Isrc/include/cddlib/"] + (
 setup(
     ext_modules=[
         Extension(
-            name=name,
+            name="cdd.__init__",
             sources=sources,
             depends=depends,
-            undef_macros=undef_macros,
             extra_compile_args=extra_compile_args,
-        )
+        ),
     ],
 )
