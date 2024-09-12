@@ -24,6 +24,12 @@ classifiers = [
 ]
 keywords = ["convex, polyhedron, linear programming, double description method"]
 
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "numpy",
+]
+
 [project.urls]
 Homepage = "https://github.com/mcmtroffaes/pycddlib-standalone"
 Documentation = "https://pycddlib.readthedocs.io/"
@@ -39,3 +45,7 @@ package-dir = {"" = "src/pycddlib/src"}
 cdd = ["py.typed"]
 
 # [[tool.setuptools.ext-modules]] defined in setup.py for now
+
+[tool.pytest.ini_options]
+testpaths = ["src/pycddlib/test"]
+norecursedirs = ["src/pycddlib/test/gmp"]
