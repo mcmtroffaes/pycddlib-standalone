@@ -49,3 +49,7 @@ cdd = ["py.typed"]
 [tool.pytest.ini_options]
 testpaths = ["src/pycddlib/test"]
 norecursedirs = ["src/pycddlib/test/gmp"]
+
+[tool.mypy]
+files = ["src/pycddlib/src/**/*.pyi", "src/pycddlib/test/*.py"]
+disallow_untyped_defs = true
