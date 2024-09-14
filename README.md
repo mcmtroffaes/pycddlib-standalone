@@ -7,6 +7,10 @@ Install from PyPI with:
 
     python -m pip install pycddlib-standalone
 
+or, on Google Colab:
+
+    %pip install pycddlib-standalone
+
 Install from the source repository with:
 
     python configure.py
