@@ -5,13 +5,19 @@ cannot be installed, such as for instance Google Colab.
 
 Install from PyPI with:
 
-    python -m pip install pycddlib-standalone
+```shell
+python -m pip install pycddlib-standalone
+```
 
 or, on Google Colab:
 
-    %pip install pycddlib-standalone
+```
+%pip install pycddlib-standalone
+```
 
 Install from the source repository with:
 
-    python configure.py
-    python -m pip install .
+```shell
+python configure.py
+python -m pip install .
+```
