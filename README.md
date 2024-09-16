@@ -1,4 +1,4 @@
-This package provides just the ``cdd`` module of pycddlib, without ``cddgmp``.
+This package provides just the ``cdd`` module of pycddlib, without ``cdd.gmp``.
 It can be compiled from the source distribution without needing cddlib or gmp installed,
 and is suitable for installation of pycddlib on systems where cddlib and/or gmp
 cannot be installed, such as for instance Google Colab.
