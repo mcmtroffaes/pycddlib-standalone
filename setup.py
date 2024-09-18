@@ -21,7 +21,6 @@ import sys
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-name = "cdd.__init__"
 sources = [
     "src/pycddlib/cython/_cdd.pyx",
     "src/cddlib/lib-src/cddcore.c",
