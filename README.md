@@ -10,7 +10,7 @@ cannot be installed, such as for instance Google Colab.
 
 * Documentation: https://pycddlib.readthedocs.io/en/latest/
 
-* Development: https://github.com/mcmtroffaes/pycddlib-standalone/ ![build](https://github.com/mcmtroffaes/pycddlib-standalone/actions/workflows/build.yml/badge.svg)
+* Development: https://github.com/mcmtroffaes/pycddlib-standalone/
 
 # Installation
 
