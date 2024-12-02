@@ -6,6 +6,12 @@ without needing cddlib and gmp installed,
 and is suitable for installation of pycddlib on systems where cddlib and gmp
 cannot be installed, such as for instance Google Colab.
 
+The pycddlib-standalone package is only meant for environments
+such as Google Colab, that have a compiler,
+but that cannot handle binary dependencies otherwise.
+In particular,
+**packages should not depend on pycddlib-standalone**.
+
 * Download: https://pypi.org/project/pycddlib-standalone/#files
 
 * Documentation: https://pycddlib.readthedocs.io/en/latest/
